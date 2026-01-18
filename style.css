@@ -1,11 +1,11 @@
 :root{
-  --bg1:#0b1020;
-  --bg2:#0f1a3a;
+  --bg1:#070a14;
+  --bg2:#0d1532;
   --card: rgba(255,255,255,.08);
   --card2: rgba(0,0,0,.35);
   --text:#e9ecff;
   --muted:#b7c0ff;
-  --line: rgba(255,255,255,.12);
+  --line: rgba(255,255,255,.14);
 }
 
 *{box-sizing:border-box}
@@ -13,13 +13,15 @@ body{
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans Thai", sans-serif;
   color:var(--text);
-  background: radial-gradient(1200px 700px at 10% 10%, #22307a 0%, transparent 60%),
-              radial-gradient(900px 500px at 90% 20%, #7a2270 0%, transparent 55%),
-              linear-gradient(180deg, var(--bg1), var(--bg2));
+  background:
+    radial-gradient(1200px 700px at 10% 10%, #1f2a6a 0%, transparent 60%),
+    radial-gradient(900px 500px at 90% 20%, #6a1f4f 0%, transparent 55%),
+    linear-gradient(180deg, var(--bg1), var(--bg2));
   min-height:100vh;
 }
 
-.app{max-width:980px; margin:0 auto; padding:18px}
+.app{max-width:1100px; margin:0 auto; padding:18px}
+
 .topbar{
   display:flex; gap:12px; justify-content:space-between; align-items:center;
   padding:14px 16px;
@@ -28,16 +30,16 @@ body{
   border-radius:18px;
   backdrop-filter: blur(10px);
 }
-.title h1{margin:0; font-size:22px}
+.title h1{margin:0; font-size:20px}
 .subtitle{margin:2px 0 0; color:var(--muted); font-size:12px}
 
-.stats{display:flex; gap:10px}
+.stats{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
 .stat{
   padding:8px 10px;
   border:1px solid var(--line);
   border-radius:14px;
   background: rgba(0,0,0,.18);
-  min-width:120px;
+  min-width:130px;
 }
 .stat span{display:block; font-size:11px; color:var(--muted)}
 .stat strong{font-size:18px}
@@ -48,7 +50,7 @@ body{
   overflow:hidden;
   border:1px solid var(--line);
   position:relative;
-  min-height:520px;
+  min-height:600px;
   background: #0a0f1f;
 }
 
@@ -61,34 +63,53 @@ body{
   filter:saturate(1.2);
 }
 
-.char{
+.charWrap{
   position:absolute;
-  left:22px;
-  top:40px;
+  left:18px;
+  top:18px;
+  right:18px;
+  display:flex;
+  justify-content:flex-start;
+  pointer-events:none;
+}
+
+.charCard{
   display:flex;
   gap:12px;
   align-items:center;
   padding:10px 12px;
-  border-radius:16px;
-  background: rgba(0,0,0,.25);
+  border-radius:18px;
+  background: rgba(0,0,0,.28);
   border:1px solid var(--line);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  max-width:420px;
 }
-.avatar{
-  width:64px; height:64px;
-  display:grid; place-items:center;
+
+.charImg{
+  width:78px;
+  height:78px;
   border-radius:16px;
-  background: rgba(255,255,255,.10);
   border:1px solid var(--line);
-  font-size:34px;
+  background: rgba(255,255,255,.06);
+  object-fit:cover;
 }
-.charName{font-weight:700}
+
+.charName{font-weight:800; font-size:16px}
+.charTag{color:var(--muted); font-size:12px; margin-top:2px}
 
 .dialog{
   position:absolute;
   left:0; right:0; bottom:0;
   padding:16px;
-  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.75) 25%, rgba(0,0,0,.88) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.70) 22%, rgba(0,0,0,.90) 100%);
+}
+
+.speakerRow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px;
 }
 
 .speaker{
@@ -97,18 +118,27 @@ body{
   border-radius:999px;
   border:1px solid var(--line);
   background: rgba(255,255,255,.08);
-  font-weight:700;
-  margin-bottom:10px;
+  font-weight:800;
+}
+
+.sceneName{
+  color:var(--muted);
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.05);
 }
 
 .text{
   font-size:18px;
-  line-height:1.5;
+  line-height:1.55;
   padding:14px 14px;
   border-radius:18px;
   border:1px solid var(--line);
   background: rgba(0,0,0,.35);
-  min-height:84px;
+  min-height:100px;
+  white-space:pre-wrap;
 }
 
 .choices{
@@ -151,7 +181,8 @@ body{
 
 .footer{margin-top:10px; color:var(--muted); text-align:center}
 
-@media (max-width:720px){
+@media (max-width:760px){
   .choices{grid-template-columns:1fr}
-  .stat{min-width:92px}
-                                                 }
+  .stat{min-width:110px}
+  .text{font-size:16px}
+    }
