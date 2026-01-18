@@ -3,38 +3,51 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>จีบสาวบนเว็บ (Demo)</title>
+  <title>Musou Crop. x Topaz (HSR VN)</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="app">
     <header class="topbar">
       <div class="title">
-        <h1>Love Web VN</h1>
-        <p class="subtitle">Demo: HTML + CSS + JS</p>
+        <h1>Musou Crop. : Promise on the Hill</h1>
+        <p class="subtitle">Visual Novel / Dating Sim (HTML + CSS + JS)</p>
       </div>
+
       <div class="stats">
         <div class="stat"><span>❤️ ความสัมพันธ์</span><strong id="rel">0</strong></div>
-        <div class="stat"><span>⏳ วัน</span><strong id="day">1</strong></div>
+        <div class="stat"><span>🧠 ความทรงจำ</span><strong id="mem">0</strong></div>
+        <div class="stat"><span>⚖️ ความเสี่ยง</span><strong id="risk">0</strong></div>
+        <div class="stat"><span>📅 วัน</span><strong id="day">1</strong></div>
       </div>
     </header>
 
-    <section class="stage" id="stage">
+    <section class="stage">
       <div class="bg" id="bg"></div>
 
-      <div class="char" id="char">
-        <div class="avatar" id="avatar">🙂</div>
-        <div class="charName" id="charName">—</div>
+      <div class="charWrap">
+        <div class="charCard" id="charCard">
+          <img id="charImg" class="charImg" src="" alt="character" />
+          <div class="charMeta">
+            <div class="charName" id="charName">—</div>
+            <div class="charTag" id="charTag">—</div>
+          </div>
+        </div>
       </div>
 
       <div class="dialog">
-        <div class="speaker" id="speaker">ผู้บรรยาย</div>
-        <div class="text" id="text">กด “เริ่มเกม” เพื่อเริ่มบทสนทนา</div>
+        <div class="speakerRow">
+          <div class="speaker" id="speaker">ผู้บรรยาย</div>
+          <div class="sceneName" id="sceneName">Prologue</div>
+        </div>
+
+        <div class="text" id="text">กด “เริ่มเกม” เพื่อเริ่มเรื่องราว</div>
 
         <div class="choices" id="choices"></div>
 
         <div class="actions">
           <button id="btnNext" class="btn primary">เริ่มเกม</button>
+          <button id="btnBack" class="btn">ย้อนกลับ</button>
           <button id="btnSave" class="btn">บันทึก</button>
           <button id="btnLoad" class="btn">โหลด</button>
           <button id="btnReset" class="btn danger">เริ่มใหม่</button>
@@ -43,10 +56,13 @@
     </section>
 
     <footer class="footer">
-      <small>Tip: แก้เนื้อเรื่องได้ในไฟล์ <b>game.js</b> ส่วนหน้าตาแก้ใน <b>style.css</b></small>
+      <small>
+        ใส่รูปตัวละครเองในโฟลเดอร์เดียวกับไฟล์เกม: 
+        <b>topaz.png</b>, <b>aventurine.png</b>, <b>jade.png</b>
+      </small>
     </footer>
   </main>
 
   <script src="game.js"></script>
 </body>
-  </html>
+</html>
