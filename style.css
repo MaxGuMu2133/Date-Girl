@@ -2,7 +2,6 @@
   --bg1:#070a14;
   --bg2:#0d1532;
   --card: rgba(255,255,255,.08);
-  --card2: rgba(0,0,0,.35);
   --text:#e9ecff;
   --muted:#b7c0ff;
   --line: rgba(255,255,255,.14);
@@ -19,7 +18,6 @@ body{
     linear-gradient(180deg, var(--bg1), var(--bg2));
   min-height:100vh;
 }
-
 .app{max-width:1100px; margin:0 auto; padding:18px}
 
 .topbar{
@@ -51,7 +49,7 @@ body{
   border:1px solid var(--line);
   position:relative;
   min-height:600px;
-  background: #0a0f1f;
+  background:#0a0f1f;
 }
 
 .bg{
@@ -65,18 +63,12 @@ body{
 
 .charWrap{
   position:absolute;
-  left:18px;
-  top:18px;
-  right:18px;
-  display:flex;
-  justify-content:flex-start;
+  left:18px; top:18px; right:18px;
+  display:flex; justify-content:flex-start;
   pointer-events:none;
 }
-
 .charCard{
-  display:flex;
-  gap:12px;
-  align-items:center;
+  display:flex; gap:12px; align-items:center;
   padding:10px 12px;
   border-radius:18px;
   background: rgba(0,0,0,.28);
@@ -84,16 +76,13 @@ body{
   backdrop-filter: blur(10px);
   max-width:420px;
 }
-
 .charImg{
-  width:78px;
-  height:78px;
+  width:78px; height:78px;
   border-radius:16px;
   border:1px solid var(--line);
   background: rgba(255,255,255,.06);
   object-fit:cover;
 }
-
 .charName{font-weight:800; font-size:16px}
 .charTag{color:var(--muted); font-size:12px; margin-top:2px}
 
@@ -105,13 +94,9 @@ body{
 }
 
 .speakerRow{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:10px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:10px; margin-bottom:10px;
 }
-
 .speaker{
   display:inline-block;
   padding:6px 10px;
@@ -120,7 +105,6 @@ body{
   background: rgba(255,255,255,.08);
   font-weight:800;
 }
-
 .sceneName{
   color:var(--muted);
   font-size:12px;
@@ -147,7 +131,6 @@ body{
   gap:10px;
   margin-top:12px;
 }
-
 .btnChoice{
   border:1px solid var(--line);
   background: rgba(255,255,255,.08);
@@ -162,12 +145,8 @@ body{
 .btnChoice:active{transform: scale(.99)}
 
 .actions{
-  display:flex;
-  gap:10px;
-  margin-top:12px;
-  flex-wrap:wrap;
+  display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;
 }
-
 .btn{
   border:1px solid var(--line);
   background: rgba(255,255,255,.07);
@@ -185,4 +164,4 @@ body{
   .choices{grid-template-columns:1fr}
   .stat{min-width:110px}
   .text{font-size:16px}
-    }
+}
